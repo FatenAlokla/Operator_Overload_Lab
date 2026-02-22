@@ -8,7 +8,7 @@ class BankAccount {
 private:
     string accountNumber;
     string accountHolderName;
-    double balance;
+    double* balance;
 
 public:
     // Default constructor
