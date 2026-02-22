@@ -20,6 +20,16 @@ public:
 
     // Parameterized constructor
 
+BankAccount& operator=(const BankAccount& other) {
+    if (this != &other) { // prevent self-assignment
+        accountNumber = other.accountNumber;
+        accountHolderName = other.accountHolderName;
+        delete balance; // free old memory
+        balance = new double(*other.balance); // copy new value
+    }
+    return *this;
+}
+
 ~BankAccount() {
     delete balance;      // frees the allocated memory
     balance = nullptr;   // good practice to avoid dangling pointer
