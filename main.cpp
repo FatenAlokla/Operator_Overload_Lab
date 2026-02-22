@@ -44,7 +44,21 @@ public:
     }
 
     // Operator += (Deposit)
-    BankAccount& operator+=(double amount) {
+
+// Comparison operators
+bool operator==(const BankAccount& other) const {
+    return accountNumber == other.accountNumber;
+}
+
+bool operator<(const BankAccount& other) const {
+    return *balance < *other.balance;
+}
+
+bool operator>(const BankAccount& other) const {
+    return *balance > *other.balance;
+}
+
+BankAccount& operator+=(double amount) {
         if (amount > 0) {
             *balance += amount;
         }
