@@ -19,6 +19,7 @@ public:
     }
 
     // Parameterized constructor
+
 ~BankAccount() {
     delete balance;      // frees the allocated memory
     balance = nullptr;   // good practice to avoid dangling pointer
@@ -27,6 +28,12 @@ public:
         accountNumber = accNum;
         accountHolderName = holderName;
         balance =  new double(bal);
+BankAccount(const BankAccount& other) {
+    accountNumber = other.accountNumber;
+    accountHolderName = other.accountHolderName;
+    balance = new double(*other.balance);  // creates an independent copy
+}
+        
     }
 
     // Getters
