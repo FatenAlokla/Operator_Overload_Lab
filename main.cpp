@@ -15,14 +15,14 @@ public:
     BankAccount() {
         accountNumber = "000000";
         accountHolderName = "Unknown";
-        balance = 0.0;
+        balance =  new double(0);
     }
 
     // Parameterized constructor
     BankAccount(string accNum, string holderName, double bal) {
         accountNumber = accNum;
         accountHolderName = holderName;
-        balance = bal;
+        balance =  new double(bal);
     }
 
     // Getters
