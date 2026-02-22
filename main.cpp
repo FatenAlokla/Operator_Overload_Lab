@@ -19,6 +19,10 @@ public:
     }
 
     // Parameterized constructor
+~BankAccount() {
+    delete balance;      // frees the allocated memory
+    balance = nullptr;   // good practice to avoid dangling pointer
+}
     BankAccount(string accNum, string holderName, double bal) {
         accountNumber = accNum;
         accountHolderName = holderName;
